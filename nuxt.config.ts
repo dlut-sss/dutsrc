@@ -12,7 +12,11 @@ export default defineNuxtConfig({
   ui: {
     fonts: false,
   },
+  hub: {
+    db: "postgresql",
+  },
   i18n: {
+    defaultLocale: "zh",
     locales: ["zh"],
   },
 });

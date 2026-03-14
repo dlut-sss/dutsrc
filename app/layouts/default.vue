@@ -4,9 +4,7 @@ import { computed } from "vue";
 const { site } = useAppConfig();
 
 const navItems = computed(() => [
-  { label: "首页", to: "/" },
-  { label: "用户", to: "/users" },
-  { label: "团队", to: "/teams" },
+  { label: "公告", to: "/announcements" },
   { label: "漏洞", to: "/vulnerabilities" },
   { label: "排行榜", to: "/leaderboard" },
 ]);
@@ -36,31 +34,13 @@ const currentYear = new Date().getFullYear();
         </template>
       </UDropdownMenu>
     </template>
-    <template #content>
-      <div class="px-4">
-        <UNavigationMenu orientation="vertical" :items="navItems" />
-        <div class="mt-6">
-          <UDropdownMenu :items="userMenuItems" placement="bottom-start">
-            <template #default="{ open }">
-              <UButton
-                variant="ghost"
-                class="w-full justify-between"
-                icon="i-lucide-user"
-                :trailing-icon="
-                  open ? 'i-lucide-chevron-up' : 'i-lucide-chevron-down'
-                "
-              >
-                访客
-              </UButton>
-            </template>
-          </UDropdownMenu>
-        </div>
-      </div>
+    <template #body>
+      <UNavigationMenu orientation="vertical" :items="navItems" />
     </template>
   </UHeader>
 
-  <UMain class="min-h-[calc(100vh-14rem)]">
-    <UContainer class="py-8">
+  <UMain>
+    <UContainer>
       <slot />
     </UContainer>
   </UMain>
