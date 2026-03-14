@@ -5,17 +5,20 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@electric-sql/pglite": "^0.3.16",
     "@nuxt/ui": "4.5.1",
     "@nuxthub/core": "0.10.7",
     "@nuxtjs/i18n": "10.2.3",
     "@nuxtjs/mdc": "0.20.2",
+    "drizzle-kit": "^0.31.9",
+    "drizzle-orm": "^0.45.1",
     "nuxt": "^4.4.2",
     "nuxt-auth-utils": "0.5.29",
+    "postgres": "^3.4.8",
+    "tailwindcss": "^4.2.1",
     "vue": "^3.5.30",
     "vue-router": "^5.0.3"
   }
