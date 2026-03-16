@@ -33,6 +33,7 @@ function login(payload: FormSubmitEvent<z.output<typeof schema>>) {
   })
     .then(async () => {
       await fetch();
+      navigateTo("/");
     })
     .catch((err) => {
       toast.add({
