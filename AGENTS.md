@@ -1,6 +1,6 @@
 This project is built with nuxt@4 + @nuxt/hub + @nuxt/ui + @nuxtjs/i18n + nuxt-auth-utils, please refer to Context7 for their documentation.
 
-- Most of the files are auto-imported by nuxt, you can directly use them in your code. DO NOT import them by yourself.
+- Most of the files from `vue`, `shared`, `utils`, `types` and nuxt modules are auto-imported by nuxt, you can directly use them in your code. DO NOT import them by yourself.
 
 ## Frontend
 

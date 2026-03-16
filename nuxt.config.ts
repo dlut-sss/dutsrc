@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   },
   i18n: {
     defaultLocale: "zh_cn",
-    locales: ["zh_cn"],
+    locales: [{ code: "zh_cn", file: "zh_cn.json" }],
   },
   routeRules: {
     "/console/**": { appLayout: "console" },

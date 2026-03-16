@@ -1,0 +1,2 @@
+ALTER TABLE "vulnerabilities" ADD COLUMN "author_id" integer NOT NULL;--> statement-breakpoint
+ALTER TABLE "vulnerabilities" ADD CONSTRAINT "vulnerabilities_author_id_users_id_fk" FOREIGN KEY ("author_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE cascade;

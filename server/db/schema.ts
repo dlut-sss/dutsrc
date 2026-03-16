@@ -14,11 +14,7 @@ import {
  * such as `createdAt: timestamp("created_at")`,
  * but not for single-word fields like `id: serial()` */
 
-export const userRole = pgEnum("user_role", [
-  "superadmin",
-  "admin",
-  "user",
-]);
+export const userRole = pgEnum("user_role", ["superadmin", "admin", "user"]);
 
 export const users = pgTable("users", {
   id: serial().primaryKey(),
@@ -135,6 +131,9 @@ export const vulnerabilities = pgTable(
     description: text().notNull(),
     status: vulnerabilityStatus().notNull().default("draft"),
     advisory: text(),
+    authorId: integer("author_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade", onUpdate: "cascade" }),
     createdAt: timestamp("created_at").notNull().defaultNow(),
     updatedAt: timestamp("updated_at").notNull().defaultNow(),
   },

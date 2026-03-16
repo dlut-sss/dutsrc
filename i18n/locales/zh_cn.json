@@ -1,1 +1,28 @@
-{}
+{
+  "vulnerability": {
+    "severity": {
+      "low": "低危",
+      "medium": "中危",
+      "high": "高危"
+    },
+    "severityColor": {
+      "low": "neutral",
+      "medium": "warning",
+      "high": "error"
+    },
+    "status": {
+      "draft": "草稿",
+      "pending": "待审核",
+      "approved": "已通过",
+      "duplicate": "重复",
+      "rejected": "已拒绝"
+    },
+    "statusColor": {
+      "draft": "neutral",
+      "pending": "info",
+      "approved": "success",
+      "duplicate": "warning",
+      "rejected": "error"
+    }
+  }
+}

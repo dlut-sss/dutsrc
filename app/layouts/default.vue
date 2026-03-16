@@ -13,7 +13,7 @@ const navItems = computed(() => [
 const userMenuItems = computed(() => {
   return user.value
     ? [
-        { label: "个人中心", to: "/profile" },
+        { label: "个人中心", to: "/console/profile" },
         { label: "退出登录", onClick: logout },
       ]
     : [{ label: "登录/注册", to: "/login" }];
