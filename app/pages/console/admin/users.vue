@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { computed } from "vue";
-
 const { data } = await useFetch("/api/admin/users?limit=100");
 const users = computed(() => data.value ?? []);
 

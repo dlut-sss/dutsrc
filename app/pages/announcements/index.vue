@@ -8,6 +8,7 @@ const posts = computed(
       description: item.content,
       date: item.createdAt,
       badge: item.pinned ? "置顶" : undefined,
+      to: `/announcements/${item.id}`,
     })) ?? [],
 );
 </script>

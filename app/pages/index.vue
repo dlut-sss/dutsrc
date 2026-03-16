@@ -2,7 +2,10 @@
 const { data: announcements } = await useFetch("/api/announcements");
 const { data: vulnerabilities } = await useFetch("/api/vulnerabilities");
 
-const announcementColumns = [{ accessorKey: "title", header: "标题" }];
+const announcementColumns = [
+  { accessorKey: "title", header: "标题" },
+  { accessorKey: "createdAt", header: "创建时间" },
+];
 
 const vulnerabilityColumns = [
   { accessorKey: "title", header: "标题" },
@@ -25,7 +28,22 @@ const vulnerabilityColumns = [
               :data="announcements"
               :columns="announcementColumns"
               empty="暂无公告"
-            />
+            >
+              <template #title-cell="{ row }">
+                <ULink class="mr-1" :to="`/announcements/${row.original.id}`">
+                  {{ row.original.title }}
+                </ULink>
+                <UBadge
+                  v-if="row.original.pinned"
+                  color="primary"
+                  variant="subtle"
+                  >置顶</UBadge
+                >
+              </template>
+              <template #createdAt-cell="{ row }">
+                {{ new Date(row.original.createdAt).toLocaleString() }}
+              </template>
+            </UTable>
           </template>
         </UPageCard>
         <UPageCard title="最新漏洞" variant="naked">

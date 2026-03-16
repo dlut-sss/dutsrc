@@ -5,7 +5,7 @@ This project is built with nuxt@4 + @nuxt/hub + @nuxt/ui + @nuxtjs/i18n + nuxt-a
 ## Frontend
 
 - Prioritize using components from Nuxt UI, and avoid writing too much tailwindcss yourself if not necessary.
-- For error messages in Toast, add `e.data.message || e.message` in the description to display the specific error information.
+- For error messages in Toast, add `e.data?.message || e.message` in the description to display the specific error information.
 
 ## Backend
 

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { computed } from "vue";
-
 const { data } = await useFetch("/api/admin/vulnerabilities?limit=100");
 const vulnerabilities = computed(() => data.value ?? []);
 

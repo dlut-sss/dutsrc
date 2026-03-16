@@ -11,11 +11,15 @@ export default defineEventHandler(async (event) => {
     .select({
       id: schema.announcements.id,
       title: schema.announcements.title,
+      content: schema.announcements.content,
       pinned: schema.announcements.pinned,
       createdAt: schema.announcements.createdAt,
     })
     .from(schema.announcements)
-    .orderBy(desc(schema.announcements.pinned), desc(schema.announcements.createdAt))
+    .orderBy(
+      desc(schema.announcements.pinned),
+      desc(schema.announcements.createdAt),
+    )
     .limit(limit)
     .offset(offset);
 });
