@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
@@ -21,5 +22,12 @@ export default defineNuxtConfig({
   },
   routeRules: {
     "/console/**": { appLayout: "console" },
+  },
+  runtimeConfig: {
+    public: {
+      casBaseUrl: "https://sso.dlut.edu.cn/cas",
+      casServiceUrl:
+        "https%3A%2F%2Fwebvpn.dlut.edu.cn%2Fhttp-3000%2F57787a7876706e323032336b6579402474170119f00b9c5dbe%2Fapi%2Fauth%2Fcas",
+    },
   },
 });

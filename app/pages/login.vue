@@ -3,8 +3,19 @@ import type { AuthFormField, FormSubmitEvent } from "@nuxt/ui";
 import { z } from "zod";
 
 const { site } = useAppConfig();
-const { user, fetch } = useUserSession();
+const { fetch } = useUserSession();
 const toast = useToast();
+const {
+  public: { casBaseUrl, casServiceUrl },
+} = useRuntimeConfig();
+
+const providers = computed(() => [
+  {
+    label: "通过统一身份认证登录",
+    icon: "i-lucide-shield-check",
+    to: `${casBaseUrl}/login?service=${casServiceUrl}`,
+  },
+]);
 
 const fields: AuthFormField[] = [
   {
@@ -48,13 +59,15 @@ function login(payload: FormSubmitEvent<z.output<typeof schema>>) {
 <template>
   <UPage>
     <UPageBody>
-      <UAuthForm
-        class="max-w-md mx-auto"
-        :title="`登录到 ${site.title}`"
-        :fields="fields"
-        :schema="schema"
-        @submit="login"
-      />
+      <div class="max-w-md mx-auto flex flex-col gap-4">
+        <UAuthForm
+          :title="`登录到 ${site.title}`"
+          :providers="providers"
+          :fields="fields"
+          :schema="schema"
+          @submit="login"
+        />
+      </div>
     </UPageBody>
   </UPage>
 </template>

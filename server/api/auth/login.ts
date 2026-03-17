@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
     .from(schema.users)
     .where(eq(schema.users.email, email));
 
-  if (!user || !(await verifyPassword(user.password, password))) {
+  if (!user || !user.password || !(await verifyPassword(user.password, password))) {
     throw createError({
       statusCode: 401,
       message: "Invalid email or password",
