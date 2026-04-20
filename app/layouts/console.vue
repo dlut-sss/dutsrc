@@ -11,6 +11,7 @@ const navItems = computed(() => {
     { label: "数据看板", icon: "i-lucide-layout-dashboard", to: "/console" },
     { label: "个人信息", type: "label" },
     { label: "个人设置", icon: "i-lucide-settings", to: "/console/profile" },
+    { label: "我的积分", icon: "i-lucide-coins", to: "/console/points" },
     { label: "我的漏洞", icon: "i-lucide-bug", to: "/console/vulnerabilities" },
     { label: "我的团队", icon: "i-lucide-users", to: "/console/team" },
   ];
