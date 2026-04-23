@@ -31,6 +31,7 @@ const userMenuItems = computed(() => {
           variant="ghost"
         />
       </UDropdownMenu>
+      <UColorModeButton />
     </template>
     <template #body>
       <UNavigationMenu orientation="vertical" :items="navItems" />
